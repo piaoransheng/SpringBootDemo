@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
  **/
 @Data
 @Table(name = "basic_exception_message")
-public class BasicExceptionMessageDO {
+public class ExceptionMessageDO {
     @Id
     @Column(name = "exm_id")
     private String id;
     @Column(name = "exm_module_name")
     private String moduleName;
     @Column(name = "exm_code")
-    private Integer code;
+    private String code;
     @Column(name = "exm_message")
     private String message;
     @Column(name = "exm_language_id")

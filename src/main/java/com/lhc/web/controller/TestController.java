@@ -3,8 +3,8 @@ package com.lhc.web.controller;
 import com.lhc.exception.BasicRuntimeException;
 import com.lhc.util.dozer.DozerUtils;
 import com.lhc.web.controller.dto.StationDTO;
-import com.lhc.web.dao.BasicExceptionMapper;
-import com.lhc.web.domain.BasicExceptionMessageDO;
+import com.lhc.web.dao.ExceptionMessageMapper;
+import com.lhc.web.domain.ExceptionMessageDO;
 import com.lhc.web.domain.StationDO;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,18 +18,18 @@ import java.time.LocalDateTime;
  **/
 @Controller
 public class TestController {
-    private final BasicExceptionMapper basicExceptionMapper;
+    private final ExceptionMessageMapper exceptionMessageMapper;
 
-    public TestController(BasicExceptionMapper basicExceptionMapper) {
-        this.basicExceptionMapper = basicExceptionMapper;
+    public TestController(ExceptionMessageMapper exceptionMessageMapper) {
+        this.exceptionMessageMapper = exceptionMessageMapper;
     }
 
     @ResponseBody
     @RequestMapping("/test1")
     public int test1() {
         try {
-            BasicExceptionMessageDO basicExceptionMessageDO = basicExceptionMapper.selectByPrimaryKey("09beecd2ac4711e9a36038d5470ea105");
-            System.out.println(basicExceptionMessageDO);
+            ExceptionMessageDO exceptionMessageDO = exceptionMessageMapper.selectByPrimaryKey("09beecd2ac4711e9a36038d5470ea105");
+            System.out.println(exceptionMessageDO);
             return 1 / 0;
         } catch (Exception e) {
             throw new BasicRuntimeException("price", "10001");

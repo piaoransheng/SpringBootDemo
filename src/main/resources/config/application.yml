@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: test
+
+  # mysql数据库
+  datasource:
+    url: jdbc:mysql://192.168.1.15:3306/newenergy_v300?useUnicode=true&useSSL=false&characterEncoding=utf8&nullCatalogMeansCurrent=true&serverTimezone=Asia/Shanghai
+    username: newenergy
+    password: cvFFxF@N
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
